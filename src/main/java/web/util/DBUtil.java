@@ -1,10 +1,8 @@
 package web.util;
+import web.model.Result;
+
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
@@ -49,6 +47,17 @@ public class DBUtil {
         }
         return false;
     }
+    public PreparedStatement getPstmt(String sql){
+        openConnection();
+        try {
+            return  (PreparedStatement) conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+        }catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }finally {
+
+        }
+    }
 
 
     protected void finalize() throws Exception {
@@ -59,6 +68,45 @@ public class DBUtil {
             e.printStackTrace();
         }
 
+    }
+
+    //占位符形式的查询方法
+    public ResultSet query(PreparedStatement pstmt) throws Exception{
+        ResultSet rtn = null;
+        try {
+            rtn = pstmt.executeQuery();
+            pstmt.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+        return rtn;
+    }
+    //占位符方式插入(返回标示列的值)
+    public int insert(PreparedStatement pstmt) throws Exception{
+        int rtn = 0;
+        try{
+            pstmt.executeUpdate();
+            ResultSet res = pstmt.getGeneratedKeys();
+            if(res != null && res.first()) {
+                rtn = res.getInt(1);
+            }
+            pstmt.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return rtn;
+    }
+    //占位符方式插入,删除.修改(返回1表示成功)
+    public int command(PreparedStatement pstmt){
+        int rtn = 0;
+        try{
+            rtn = pstmt.executeUpdate();
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return  rtn;
     }
 
     // 查询并得到结果集

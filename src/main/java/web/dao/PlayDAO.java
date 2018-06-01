@@ -6,6 +6,8 @@ import web.model.enums.PLAY_RATING;
 import web.model.enums.PLAY_TYPE;
 import web.util.DBUtil;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,17 +15,67 @@ import java.util.List;
 public class PlayDAO implements iPlayDAO {
     @Override
     public int insert(Play play) {
+        String sql = "INSERT INTO play (name,type,area,rating,duration,startDate,endDate,price,imgUrl) " +
+                "VALUES(?,?,?,?,?,?,?,?,?)";
+        DBUtil db = new DBUtil();
+        PreparedStatement pstmt = db.getPstmt(sql);
+
+        try{
+            pstmt.setString(1,play.getName());
+            pstmt.setString(2,play.getType().name());
+            pstmt.setString(3,play.getArea());
+            pstmt.setString(4,play.getRating().name());
+            pstmt.setInt(5,play.getDuration());
+            pstmt.setDate(6,Date.valueOf(play.getStartDate()));
+            pstmt.setDate(7,Date.valueOf(play.getEndDate()));
+            pstmt.setInt(8,play.getPrice());
+            pstmt.setString(9,play.getImgUrl());
+            play.setId(db.insert(pstmt));
+            db.close();
+            return 1;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return 0;
     }
 
     @Override
     public int delete(int id) {
-        return 0;
+        String sql = "DELETE FROM play WHERE id = "+ id;
+        DBUtil db = new DBUtil();
+        int rtn = db.command(db.getPstmt(sql));
+        try{
+            db.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return rtn;
     }
 
     @Override
     public int update(Play play) {
-        return 0;
+        String sql = "UPDATE play SET name = ?,type = ?,area = ?,rating = ?,duration = ?, startDate = ?," +
+                "endDate = ?,price = ?,imgUrl = ? WHERE id = ?";
+        DBUtil db = new DBUtil();
+        PreparedStatement pstmt = db.getPstmt(sql);
+        int rtn = 0;
+        try {
+            pstmt.setString(1,play.getName());
+            pstmt.setString(2,play.getType().name());
+            pstmt.setString(3,play.getArea());
+            pstmt.setString(4,play.getRating().name());
+            pstmt.setInt(5,play.getDuration());
+            pstmt.setDate(6,Date.valueOf(play.getStartDate()));
+            pstmt.setDate(7,Date.valueOf(play.getEndDate()));
+            pstmt.setInt(8,play.getPrice());
+            pstmt.setString(9,play.getImgUrl());
+            pstmt.setInt(10,play.getId());
+            rtn = db.command(pstmt);
+            db.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return rtn;
     }
 
     @Override

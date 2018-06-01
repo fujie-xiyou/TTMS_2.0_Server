@@ -24,6 +24,7 @@ public class LoginFilter implements Filter {
         }catch (Exception e){
 
         }
+        System.out.println(servletRequest.getReader().readLine());
         Enumeration<String> enumer = ((HttpServletRequest)servletRequest).getHeaderNames();
         while(enumer.hasMoreElements()){
             String key = enumer.nextElement();
