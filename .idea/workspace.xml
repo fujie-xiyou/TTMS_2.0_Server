@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="294b44ef-b781-485f-bd81-700d1ca59b84" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/TestDBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/filter/TestFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TTMS_WebServer_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TTMS_WebServer_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
@@ -20,15 +18,14 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/TTMS_WebServer_war_exploded/WEB-INF/classes/web/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/TTMS_WebServer_war_exploded/WEB-INF/classes/web/util/DBUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/TTMS_WebServer_war_exploded/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/controller/PlayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/PlayDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/PlayDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/filter/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/filter/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/Seat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/model/Studio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/Studio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_RATING.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_RATING.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_TYPE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/SEAT_STATUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/SEAT_STATUS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/TICKET_STATUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/TICKET_STATUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/service/PlaySer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/service/PlaySer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/util/DBUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/PlayController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+            <state relative-caret-position="385">
+              <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,22 +80,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaySer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/service/PlaySer.java">
+      <file leaf-file-name="StudioController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/StudioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            <state relative-caret-position="214">
+              <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudioSer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/service/StudioSer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+              <folding>
+                <element signature="e#919#920#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudioDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="101" column="68" lean-forward="true" selection-start-line="101" selection-start-column="68" selection-end-line="101" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SeatDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+              <folding>
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Seat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/model/Seat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-149">
+              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iSeatDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -112,15 +155,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/AccountDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PlayDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/PlayDAO.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,54 +163,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/filter/LoginFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestDBUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/test/TestDBUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="10" column="334" selection-start-line="10" selection-start-column="334" selection-end-line="10" selection-end-column="334" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/util/DBUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/filter/TestFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/share/jdk1.8.0_152/src.zip!/java/sql/Connection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17841">
-              <caret line="939" column="22" selection-start-line="939" selection-start-column="22" selection-end-line="939" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -243,10 +229,8 @@
         <option value="$PROJECT_DIR$/src/main/java/web/controller/AccountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/model/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/controller/StudioController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/service/SeatSer.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/service/StudioSer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/model/Studio.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/idao/iPlayDAO.java" />
@@ -261,6 +245,9 @@
         <option value="$PROJECT_DIR$/src/main/java/web/dao/PlayDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/filter/TestFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/web/controller/PlayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/model/Seat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java" />
       </list>
     </option>
   </component>
@@ -392,7 +379,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
@@ -722,7 +709,7 @@
       <workItem from="1527777022324" duration="4389000" />
       <workItem from="1527815525014" duration="6255000" />
       <workItem from="1527837940967" duration="4579000" />
-      <workItem from="1527886309826" duration="1975000" />
+      <workItem from="1527886309826" duration="9961000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1527716574676</created>
@@ -745,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527717286394</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="剧目挂增删改查">
+      <created>1527893568457</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527893568457</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175820000" />
+    <option name="totallyTimeSpent" value="183806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-1" width="1922" height="1046" extended-state="6" />
@@ -775,7 +769,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36392742" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36392742" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3499327" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20364584" />
@@ -805,7 +799,8 @@
     </ignored-roots>
     <MESSAGE value="test" />
     <MESSAGE value="初始化仓库" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化仓库" />
+    <MESSAGE value="剧目挂增删改查" />
+    <option name="LAST_COMMIT_MESSAGE" value="剧目挂增删改查" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -839,13 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/model/Seat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -955,13 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/StudioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/model/enums/ACCOUNT_TYPE.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -983,45 +964,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/service/StudioSer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1881">
-          <caret line="107" column="37" lean-forward="true" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/idao/iStudioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1043,6 +989,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,6 +1017,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1088,6 +1042,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <folding>
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,12 +1129,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/model/Seat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/PlayController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        <state relative-caret-position="385">
+          <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/controller/StudioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/idao/iStudioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/service/StudioSer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding>
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="101" column="68" lean-forward="true" selection-start-line="101" selection-start-column="68" selection-end-line="101" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/idao/iSeatDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/SeatDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
           </folding>
         </state>
       </provider>
