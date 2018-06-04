@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="TTMS_WebServer:war exploded" />
+      <artifact name="TTMS" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294b44ef-b781-485f-bd81-700d1ca59b84" name="Default" comment="演出厅查询的时候加上座位总数">
+    <list default="true" id="294b44ef-b781-485f-bd81-700d1ca59b84" name="Default" comment="修正bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/Studio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/Studio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_RATING.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_RATING.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_TYPE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/PLAY_TYPE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/SEAT_STATUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/SEAT_STATUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/model/enums/TICKET_STATUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/model/enums/TICKET_STATUS.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -102,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudioSer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StudioSer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/service/StudioSer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="513">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#919#920#0" expanded="true" />
                 <element signature="e#959#960#0" expanded="true" />
@@ -115,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudioDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudioDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="83" column="105" selection-start-line="83" selection-start-column="105" selection-end-line="83" selection-end-column="105" />
+            <state relative-caret-position="266">
+              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -272,10 +266,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1968" />
-    <option name="y" value="35" />
-    <option name="width" value="1657" />
-    <option name="height" value="918" />
+    <option name="x" value="1903" />
+    <option name="y" value="137" />
+    <option name="width" value="1914" />
+    <option name="height" value="1041" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -285,7 +279,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -382,8 +378,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -690,7 +684,8 @@
       <workItem from="1528004352311" duration="7696000" />
       <workItem from="1528035522012" duration="1200000" />
       <workItem from="1528040297417" duration="231000" />
-      <workItem from="1528070971899" duration="2473000" />
+      <workItem from="1528070971899" duration="5283000" />
+      <workItem from="1528107527728" duration="4331000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1527716574676</created>
@@ -741,14 +736,22 @@
       <option name="project" value="LOCAL" />
       <updated>1528100691412</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修正bug">
+      <created>1528101417863</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1528101417863</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195658000" />
+    <option name="totallyTimeSpent" value="202799000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1968" y="35" width="1657" height="918" extended-state="0" />
+    <frame x="2018" y="141" width="1914" height="1041" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
@@ -764,7 +767,6 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39807898" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3276414" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
@@ -772,8 +774,8 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.33084312" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.42150804" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.54140913" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23625378" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27575108" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2044979" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -781,11 +783,12 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" x="0" y="0" width="430" height="846" id="Documentation" order="10" side_tool="true" visible="true" weight="0.32916668" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32950193" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="File Transfer" order="15" weight="0.32954547" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3276414" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="File Transfer" order="15" weight="0.32954547" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -805,7 +808,8 @@
     <MESSAGE value="太迷了 又提交一大堆东西" />
     <MESSAGE value="好像没改什么啊" />
     <MESSAGE value="演出厅查询的时候加上座位总数" />
-    <option name="LAST_COMMIT_MESSAGE" value="演出厅查询的时候加上座位总数" />
+    <MESSAGE value="修正bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1172,21 +1176,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/service/StudioSer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="513">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#919#920#0" expanded="true" />
             <element signature="e#959#960#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="83" column="105" selection-start-line="83" selection-start-column="105" selection-end-line="83" selection-end-column="105" />
         </state>
       </provider>
     </entry>

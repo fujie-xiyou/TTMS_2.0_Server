@@ -14,12 +14,13 @@ public class StudioDAO implements iStudioDAO {
     @Override
     public int insert(Studio stu) {
         try {
-            String sql = "insert into studio(studio_name, studio_row_count, studio_col_count, studio_introduction )"
+            String sql = "insert into studio(studio_name, studio_row_count, studio_col_count, seat_count, studio_introduction )"
                     + " values('"
                     + stu.getName()
                     + "', "
                     + stu.getRow()
                     + ", " + stu.getCol()
+                    + ", " + stu.getCount()
                     + ", '" + stu.getIntroduction()
                     + "' )";
             DBUtil db = new DBUtil();
