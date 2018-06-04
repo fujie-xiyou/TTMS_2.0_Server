@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="TTMS" />
+      <artifact name="TTMS_WebServer:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="294b44ef-b781-485f-bd81-700d1ca59b84" name="Default" comment="">
+    <list default="true" id="294b44ef-b781-485f-bd81-700d1ca59b84" name="Default" comment="演出厅查询的时候加上座位总数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java" afterDir="false" />
@@ -118,8 +118,8 @@
       <file leaf-file-name="StudioDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="100" column="59" lean-forward="true" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+            <state relative-caret-position="61">
+              <caret line="83" column="105" selection-start-line="83" selection-start-column="105" selection-end-line="83" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -272,8 +272,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="56" />
-    <option name="y" value="85" />
+    <option name="x" value="1968" />
+    <option name="y" value="35" />
     <option name="width" value="1657" />
     <option name="height" value="918" />
   </component>
@@ -292,6 +292,24 @@
             <path>
               <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="TTMS_WebServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTMS_WebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTMS_WebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTMS_WebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="TTMS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TTMS_WebServer" type="b2602c69:ProjectViewProjectNode" />
@@ -672,7 +690,7 @@
       <workItem from="1528004352311" duration="7696000" />
       <workItem from="1528035522012" duration="1200000" />
       <workItem from="1528040297417" duration="231000" />
-      <workItem from="1528070971899" duration="1670000" />
+      <workItem from="1528070971899" duration="2473000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1527716574676</created>
@@ -716,15 +734,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528040452580</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="演出厅查询的时候加上座位总数">
+      <created>1528100691412</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1528100691412</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194855000" />
+    <option name="totallyTimeSpent" value="195658000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="-1" width="1922" height="1046" extended-state="6" />
-    <editor active="true" />
+    <frame x="1968" y="35" width="1657" height="918" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
@@ -740,15 +764,16 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39807898" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3276414" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.33084312" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36392742" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42150804" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.35218784" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20364584" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.54140913" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23625378" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -757,7 +782,6 @@
       <window_info anchor="right" x="0" y="0" width="430" height="846" id="Documentation" order="10" side_tool="true" visible="true" weight="0.32916668" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32950193" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3276414" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="File Transfer" order="15" weight="0.32954547" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -780,7 +804,8 @@
     <MESSAGE value="太迷了 有提交一大堆东西" />
     <MESSAGE value="太迷了 又提交一大堆东西" />
     <MESSAGE value="好像没改什么啊" />
-    <option name="LAST_COMMIT_MESSAGE" value="好像没改什么啊" />
+    <MESSAGE value="演出厅查询的时候加上座位总数" />
+    <option name="LAST_COMMIT_MESSAGE" value="演出厅查询的时候加上座位总数" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,8 +1185,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/web/dao/StudioDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="100" column="59" lean-forward="true" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+        <state relative-caret-position="61">
+          <caret line="83" column="105" selection-start-line="83" selection-start-column="105" selection-end-line="83" selection-end-column="105" />
         </state>
       </provider>
     </entry>
