@@ -1,7 +1,9 @@
 package web.dao;
 
+import org.springframework.test.context.jdbc.Sql;
 import web.idao.iSeatDAO;
 import web.model.Seat;
+import web.model.Studio;
 import web.model.enums.PLAY_TYPE;
 import web.model.enums.SEAT_STATUS;
 import web.util.DBUtil;
@@ -44,8 +46,39 @@ public class SeatDAO implements iSeatDAO {
     }
 
     @Override
+    public int delete(Studio studio){
+        String sql = "DELETE FROM seat WHERE studioID = " + studio.getId();
+        DBUtil db = new DBUtil();
+        db.openConnection();
+        try {
+            int rtn = db.execCommand(sql);
+            db.close();
+            return  rtn;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
     public int update(Seat seat) {
         return 0;
+    }
+    @Override
+    public int update(List<Seat> seats){
+        DBUtil db = new DBUtil();
+        db.openConnection();
+        int rtn = 1;
+        try {
+            for (Seat seat : seats) {
+                String sql = "UPDATE seat SET status = '" + seat.getStatus() + "' WHERE id = " + seat.getId();
+                rtn *= db.execCommand(sql);
+            }
+            db.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return rtn;
     }
 
     @Override

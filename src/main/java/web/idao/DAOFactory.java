@@ -1,9 +1,6 @@
 package web.idao;
 
-import web.dao.AccountDAO;
-import web.dao.PlayDAO;
-import web.dao.SeatDAO;
-import web.dao.StudioDAO;
+import web.dao.*;
 import web.model.Studio;
 
 public class DAOFactory {
@@ -18,5 +15,8 @@ public class DAOFactory {
     }
     public static iPlayDAO creatPlayDAO(){
         return new PlayDAO();
+    }
+    public static iScheduleDAO creatScheduleDAO(){
+        return new ScheduleDAO();
     }
 }

@@ -46,4 +46,13 @@ public class StudioController {
             return new CustomResp(new Result("服务器异常")).toString();
         }
     }
+    @RequestMapping("/modify")
+    public String modify(@RequestBody String data){
+        Studio studio = json.fromJson(data,Studio.class);
+        if(studioSer.modify(studio) > 0){
+            return  new CustomResp(new Result()).toString();
+        }else {
+            return new CustomResp(new Result("服务器异常")).toString();
+        }
+    }
 }

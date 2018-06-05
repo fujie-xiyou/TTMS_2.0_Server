@@ -2,6 +2,7 @@ package web.model;
 
 import web.model.enums.TICKET_STATUS;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Schedule {
 	private int id;
 	private int playID;//剧目id
 	private int studioID; //演出厅ID
-	private Date date; //演出时间
+	private LocalDate date; //演出时间
 	private int seatCount;//剩余座位数量
 	private Ticket[][] tickets;
 	public int getId() {
@@ -26,7 +27,7 @@ public class Schedule {
 	public void setPlayID(int playID) {
 		this.playID = playID;
 	}
-	public Schedule(int id, int playID, int studioID, Date date) {
+	public Schedule(int id, int playID, int studioID, LocalDate date) {
 		super();
 		this.id = id;
 		this.playID = playID;
@@ -39,10 +40,10 @@ public class Schedule {
 	public void setStudioID(int studioID) {
 		this.studioID = studioID;
 	}
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public int getSeatCount() {
@@ -54,7 +55,7 @@ public class Schedule {
 	public static List<Schedule> getSchedules(){
 		int id = 1;
 		List<Schedule> schedules = new LinkedList<>();
-		Schedule schedule = new Schedule(1, 1, 1, new Date());
+		Schedule schedule = new Schedule(1, 1, 1, LocalDate.now());
 		Studio studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudioID());
 		schedule.setSeatCount(studio.getCount());
 		Play play = schedule.getPlayByID(Play.getPlays(), schedule.getPlayID());
@@ -68,7 +69,7 @@ public class Schedule {
 		}
 		schedule.setTickets(tickets);
 		schedules.add(schedule);
-		schedule = new Schedule(2, 1, 2, new Date());
+		schedule = new Schedule(2, 1, 2, LocalDate.now());
 		studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudioID());
 		schedule.setSeatCount(studio.getCount());
 		play = schedule.getPlayByID(Play.getPlays(), schedule.getPlayID());
