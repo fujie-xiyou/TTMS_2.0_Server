@@ -26,7 +26,7 @@ public class StudioController {
     public String add(@RequestBody String data){
         CustomResp rtn = new CustomResp();
         Studio studio = json.fromJson(data,Studio.class);
-        if(!studioSer.fetch("studio_name = '"+studio.getName()).isEmpty()){
+        if(!studioSer.fetch("studio_name = '"+studio.getName()+"'").isEmpty()){
             rtn.setResultJSON(new Result("演出厅 \""+studio.getName()+"\" 已经存在"));
         } else if(studioSer.add(studio) > 0){
             //添加成功

@@ -17,17 +17,22 @@ public class SeatDAO implements iSeatDAO {
     }
     @Override
     public int insert(List<Seat> seats){
-        StringBuffer sqlBuf = new StringBuffer("INSERT INTO seat(studioID,row,col,status) VALUSE");
+        StringBuffer sqlBuf = new StringBuffer("INSERT INTO seat(studioID,row,col,status) VALUES");
         for(Seat seat : seats){
-            sqlBuf.append("("+seat.getstudioID()+","+seat.getRow()+","+seat.getCol()+","+seat.getStatus().name()+")") ;
+            sqlBuf.append("("+seat.getstudioID()+","+seat.getRow()+","+seat.getCol()+",'"+seat.getStatus().name()+"'),") ;
         }
+        sqlBuf.deleteCharAt(sqlBuf.length()-1);
         String sql = sqlBuf.toString();
         DBUtil db = new DBUtil();
         db.openConnection();
         try{
-           int rtn = db.execCommand(sql);
+           ResultSet res = db.getInsertObjectIDs(sql);
+           for (Seat seat : seats){
+               if (!res.next()) break;
+               seat.setId(res.getInt(1));
+           }
            db.close();
-           return rtn;
+           return 1;
         }catch (Exception e){
             e.printStackTrace();
         }

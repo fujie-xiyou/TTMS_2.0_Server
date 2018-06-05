@@ -19,7 +19,13 @@ public class StudioSer {
         for(Seat[] seats1 : seatss){
             seats.addAll(Arrays.asList(seats1));
         }
-        return stuDAO.insert(stu) * seatSer.addAll(seats);
+        if(stuDAO.insert(stu) > 0){
+            for(Seat seat : seats){
+                seat.setstudioID(stu.getId());
+            }
+            return seatSer.addAll(seats);
+        }
+        return 0;
     }
 
     public int modify(Studio stu){

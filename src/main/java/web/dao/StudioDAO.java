@@ -104,7 +104,7 @@ public class StudioDAO implements iStudioDAO {
                     List<Seat> seats = DAOFactory.creatSeatDAO().select("studioID = "+stu.getId());
                     Seat[][] seats1 = new Seat[stu.getRow()][stu.getCol()];
                     for(Seat seat:seats){
-                        seats1[seat.getRow()][seat.getCol()] = seat;
+                        seats1[seat.getRow()-1][seat.getCol()-1] = seat;
                     }
                     stu.setSeats(seats1);
                     stuList.add(stu);
