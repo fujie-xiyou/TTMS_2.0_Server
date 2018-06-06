@@ -12,8 +12,6 @@ public class Studio {
 	private int col;
 	private int count;
 	private String introduction;
-
-
 	private Seat[][] seats;
 
 	public Studio(int id, String name, int row, int col, int count) {
@@ -22,13 +20,8 @@ public class Studio {
 		this.row = row;
 		this.col = col;
 		this.count = count;
-		this.seats = new Seat[row][col];
-		int seatid = 1;
-		for(int i=0; i<row ;i++) {
-			for(int j = 0; j<col; j ++) {
-				this.seats[i][j] = new Seat(seatid, id, i, j, SEAT_STATUS.GOOD);
-			}
-		}
+		this.seats = null;
+
 	}
 	@Override
 	public String toString() {
@@ -86,9 +79,17 @@ public class Studio {
 	public String getIntroduction() {
 		return introduction;
 	}
-
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
+	}
+	public void copyFrom(Studio studio){
+		this.setId(studio.getId());
+		this.setName(studio.getName());
+		this.setRow(studio.getRow());
+		this.setCol(studio.getCol());
+		this.setCount(studio.getCount());
+		this.setIntroduction(studio.getIntroduction());
+		this.setSeats(studio.getSeats().clone());
 	}
 
 

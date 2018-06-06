@@ -47,10 +47,12 @@ public class StudioDAO implements iStudioDAO {
             String sql = "update studio set " + " studio_name ='"
                     + stu.getName() + "', " + " studio_row_count = "
                     + stu.getRow() + ", " + " studio_col_count = "
-                    + stu.getCol() + ", " + " studio_introduction = '"
+                    + stu.getCol() + ", " + " seat_count = "
+                    + stu.getCount() + ", studio_introduction = '"
                     + stu.getIntroduction() + "' ";
 
             sql += " where studio_id = " + stu.getId();
+            System.out.println(sql);
             DBUtil db = new DBUtil();
             db.openConnection();
             rtn =db.execCommand(sql);
