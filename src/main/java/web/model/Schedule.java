@@ -7,38 +7,45 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Schedule {
 	//演出计划类型
 	private int id;
-	private int playID;//剧目id
-	private int studioID; //演出厅ID
+	private Play play;//剧目
+	private Studio studio; //演出厅
 	private LocalDate date; //演出时间
-	private int seatCount;//剩余座位数量
+	private int ticketCount;//剩余座位数量
 	private Ticket[][] tickets;
 	public int getId() {
 		return id;
 	}
+
+	public Play getPlay() {
+		return play;
+	}
+
+	public void setPlay(Play play) {
+		this.play = play;
+	}
+
+	public Studio getStudio() {
+		return studio;
+	}
+
+	public void setStudio(Studio studio) {
+		this.studio = studio;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPlayID() {
-		return playID;
-	}
-	public void setPlayID(int playID) {
-		this.playID = playID;
-	}
-	public Schedule(int id, int playID, int studioID, LocalDate date) {
+	public Schedule(int id, Play play, Studio studio, LocalDate date,int ticketCount) {
 		super();
 		this.id = id;
-		this.playID = playID;
-		this.studioID = studioID;
+		this.play = play;
+		this.studio = studio;
 		this.date = date;
-	}
-	public int getStudioID() {
-		return studioID;
-	}
-	public void setStudioID(int studioID) {
-		this.studioID = studioID;
+		this.ticketCount = ticketCount;
 	}
 	public LocalDate getDate() {
 		return date;
@@ -46,46 +53,60 @@ public class Schedule {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public int getSeatCount() {
-		return seatCount;
+	public int getTicketCount() {
+		return ticketCount;
 	}
-	public void setSeatCount(int seatCount) {
-		this.seatCount = seatCount;
+	public void setTicketCount(int ticketCount) {
+		this.ticketCount = ticketCount;
 	}
-	public static List<Schedule> getSchedules(){
-		int id = 1;
-		List<Schedule> schedules = new LinkedList<>();
-		Schedule schedule = new Schedule(1, 1, 1, LocalDate.now());
-		Studio studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudioID());
-		schedule.setSeatCount(studio.getCount());
-		Play play = schedule.getPlayByID(Play.getPlays(), schedule.getPlayID());
-		Seat[][] seats = studio.getSeats();
-		Ticket[][] tickets = new Ticket[studio.getRow()][studio.getCol()];
-		for(int i = 0; i < seats.length; i++) {
-			for(int j = 0; j < seats[0].length; j++) {
-				tickets[i][j] = new Ticket(id, schedule.getId(), studio.getSeats()[i][j].getId(), play.getPrice(), TICKET_STATUS.AVL);
-				id++;
-			}
-		}
-		schedule.setTickets(tickets);
-		schedules.add(schedule);
-		schedule = new Schedule(2, 1, 2, LocalDate.now());
-		studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudioID());
-		schedule.setSeatCount(studio.getCount());
-		play = schedule.getPlayByID(Play.getPlays(), schedule.getPlayID());
-		seats = studio.getSeats();
-		tickets = new Ticket[studio.getRow()][studio.getCol()];
-		for(int i = 0; i < seats.length; i++) {
-			for(int j = 0; j < seats[0].length; j++) {
-				tickets[i][j] = new Ticket(id, schedule.getId(), studio.getSeats()[i][j].getId(), play.getPrice(), TICKET_STATUS.AVL);
-				id++;
-			}
-		}
-		schedule.setTickets(tickets);
-		schedules.add(schedule);
-		return schedules;
+	public Ticket[][] getTickets() {
+		return tickets;
 	}
-	
+	public void setTickets(Ticket[][] tickets) {
+		this.tickets = tickets;
+	}
+	public void copyFrom(Schedule schedule){
+		this.id = schedule.id;
+		this.play = schedule.play;
+		this.studio = schedule.studio;
+		this.date = schedule.date;
+		this.ticketCount = schedule.ticketCount;
+		this.ticketCount = schedule.ticketCount;
+	}
+//	public static List<Schedule> getSchedules(){
+//		int id = 1;
+//		List<Schedule> schedules = new LinkedList<>();
+//		Schedule schedule = new Schedule(1, 1, 1, LocalDate.now(),18);
+//		Studio studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudio());
+//		schedule.setTicketCount(studio.getCount());
+//		Play play = schedule.getPlayByID(null, schedule.getPlayID());
+//		Seat[][] seats = studio.getSeats();
+//		Ticket[][] tickets = new Ticket[studio.getRow()][studio.getCol()];
+//		for(int i = 0; i < seats.length; i++) {
+//			for(int j = 0; j < seats[0].length; j++) {
+//				tickets[i][j] = new Ticket(id, schedule.getId(), studio.getSeats()[i][j].getId(), play.getPrice(), TICKET_STATUS.AVL);
+//				id++;
+//			}
+//		}
+//		schedule.setTickets(tickets);
+//		schedules.add(schedule);
+//		schedule = new Schedule(2, 1, 2, LocalDate.now(),18);
+//		studio = schedule.getStudioByID(Studio.getStdios(),schedule.getStudioID());
+//		schedule.setTicketCount(studio.getCount());
+//		play = schedule.getPlayByID(null, schedule.getPlayID());
+//		seats = studio.getSeats();
+//		tickets = new Ticket[studio.getRow()][studio.getCol()];
+//		for(int i = 0; i < seats.length; i++) {
+//			for(int j = 0; j < seats[0].length; j++) {
+//				tickets[i][j] = new Ticket(id, schedule.getId(), studio.getSeats()[i][j].getId(), play.getPrice(), TICKET_STATUS.AVL);
+//				id++;
+//			}
+//		}
+//		schedule.setTickets(tickets);
+//		schedules.add(schedule);
+//		return schedules;
+//	}
+
 	public Studio getStudioByID(List<Studio> studios ,int id) {
 		//根据ID获取演出厅
 		for(Studio studio : studios) {
@@ -101,10 +122,5 @@ public class Schedule {
 		}
 		return null;
 	}
-	public Ticket[][] getTickets() {
-		return tickets;
-	}
-	public void setTickets(Ticket[][] tickets) {
-		this.tickets = tickets;
-	}
+
 }

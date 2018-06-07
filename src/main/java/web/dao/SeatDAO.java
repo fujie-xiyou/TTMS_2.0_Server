@@ -90,6 +90,7 @@ public class SeatDAO implements iSeatDAO {
         }
         DBUtil db = new DBUtil();
         db.openConnection();
+
         try {
             ResultSet res = db.execQuery(sql);
             while (res.next()){

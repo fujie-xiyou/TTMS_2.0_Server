@@ -21,6 +21,11 @@ import java.util.List;
 public class SeatController {
     Gson json = new Gson();
     iSeatDAO iSeatDAO = DAOFactory.creatSeatDAO();//惊了  咋就架空Server层了!!!
+    @RequestMapping("/fetchAll")
+    public String fetchAll(@RequestBody String data){
+        Studio studio = json.fromJson(data,Studio.class);
+        return new CustomResp(new Result(),iSeatDAO.select("studioID = "+ studio.getId())).toString();
+    }
     @RequestMapping("/addAll")
     public String addAll(@RequestBody String data){
         List<Seat> seats = json.fromJson(data,new TypeToken<List<Seat>>(){}.getType());

@@ -52,7 +52,6 @@ public class StudioDAO implements iStudioDAO {
                     + stu.getIntroduction() + "' ";
 
             sql += " where studio_id = " + stu.getId();
-            System.out.println(sql);
             DBUtil db = new DBUtil();
             db.openConnection();
             rtn =db.execCommand(sql);
@@ -103,12 +102,12 @@ public class StudioDAO implements iStudioDAO {
                     stu.setCol(rst.getInt("studio_col_count"));
                     stu.setCount(rst.getInt("seat_count"));
                     stu.setIntroduction(rst.getString("studio_introduction"));
-                    List<Seat> seats = DAOFactory.creatSeatDAO().select("studioID = "+stu.getId());
-                    Seat[][] seats1 = new Seat[stu.getRow()][stu.getCol()];
-                    for(Seat seat:seats){
-                        seats1[seat.getRow()-1][seat.getCol()-1] = seat;
-                    }
-                    stu.setSeats(seats1);
+//                    List<Seat> seats = DAOFactory.creatSeatDAO().select("studioID = "+stu.getId());
+//                    Seat[][] seats1 = new Seat[stu.getRow()][stu.getCol()];
+//                    for(Seat seat:seats){
+//                        seats1[seat.getRow()-1][seat.getCol()-1] = seat;
+//                    }
+//                    stu.setSeats(seats1);
                     stuList.add(stu);
                 }
             }
