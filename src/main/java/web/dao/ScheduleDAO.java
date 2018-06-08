@@ -9,31 +9,30 @@ import web.service.PlaySer;
 import web.service.StudioSer;
 import web.util.DBUtil;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ScheduleDAO implements iScheduleDAO {
     @Override
     public int insert(Schedule schedule) {
-        String sql = "INSERT INTO schedule (playID,studioID,date,ticketCount) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO schedule (playID,studioID,date,time,ticketCount) VALUES(?,?,?,?,?)";
         DBUtil db = new DBUtil();
         PreparedStatement pstmt = db.getPstmt(sql);
         try {
             pstmt.setInt(1, schedule.getPlay().getId());
             pstmt.setInt(2,schedule.getStudio().getId());
             pstmt.setDate(3,Date.valueOf(schedule.getDate()));
-            pstmt.setInt(4,schedule.getTicketCount());
+            pstmt.setTime(4,Time.valueOf(schedule.getTime()));
+            pstmt.setInt(5,schedule.getTicketCount());
             int id = db.insert(pstmt);
             schedule.setId(id);
             db.close();
+            return 1;
         }catch (Exception e) {
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
 
     @Override
@@ -54,28 +53,29 @@ public class ScheduleDAO implements iScheduleDAO {
     @Override
     public int update(Schedule schedule) {
         int rtn = 0;
-        String sql = "UPDATE schedule SET studioID = ? ,date = ? ,ticketCount = ? WHERE id = ?";
+        String sql = "UPDATE schedule SET studioID = ? ,date = ? ,time = ? ,ticketCount = ? WHERE id = ?";
         DBUtil db = new DBUtil();
         PreparedStatement pstmt = db.getPstmt(sql);
         try {
             pstmt.setInt(1, schedule.getPlay().getId());
             pstmt.setInt(2,schedule.getStudio().getId());
             pstmt.setDate(3,Date.valueOf(schedule.getDate()));
-            pstmt.setInt(4,schedule.getTicketCount());
-            pstmt.setInt(5,schedule.getId());
+            pstmt.setTime(4,Time.valueOf(schedule.getTime()));
+            pstmt.setInt(5,schedule.getTicketCount());
+            pstmt.setInt(6,schedule.getId());
             rtn = db.command(pstmt);
             db.close();
             return rtn;
         }catch (Exception e){
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
 
     @Override
     public List<Schedule> select(String condt) {
         List<Schedule> schedules = new LinkedList<>();
-        String sql = "SELECT id, playID, studioID, date, ticketCount FROM schedule ";
+        String sql = "SELECT id, playID, studioID, date, time ,ticketCount FROM schedule ";
         if(condt != null && !condt.isEmpty()){
             sql += "WHERE " + condt;
         }
@@ -88,11 +88,11 @@ public class ScheduleDAO implements iScheduleDAO {
                         null,null,
                         res.getDate("date").toLocalDate(),
                         res.getInt("ticketCount"));
+                schedule.setTime(res.getTime("time").toLocalTime());
                 Play play = new PlaySer().fetch("id = "+ res.getInt("playID")).get(0);
                 schedule.setPlay(play);
                 Studio studio = new StudioSer().fetch("studio_id = "+res.getInt("studioID")).get(0);
                 schedule.setStudio(studio);
-                studio.setSeats(null);
                 schedules.add(schedule);
             }
         }catch (Exception e){

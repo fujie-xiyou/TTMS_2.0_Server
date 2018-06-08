@@ -3,17 +3,20 @@ package web.model;
 import web.model.enums.TICKET_STATUS;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 
+
 public class Schedule {
 	//演出计划类型
 	private int id;
-	private Play play;//剧目
-	private Studio studio; //演出厅
-	private LocalDate date; //演出时间
+	private Play play;//剧目id
+	private Studio studio; //演出厅ID
+	private LocalDate date; //演出日期
+	private LocalTime time;
 	private int ticketCount;//剩余座位数量
 	private Ticket[][] tickets;
 	public int getId() {
@@ -39,20 +42,22 @@ public class Schedule {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Schedule(int id, Play play, Studio studio, LocalDate date,int ticketCount) {
-		super();
-		this.id = id;
-		this.play = play;
-		this.studio = studio;
-		this.date = date;
-		this.ticketCount = ticketCount;
-	}
+
 	public LocalDate getDate() {
 		return date;
 	}
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+
+	public LocalTime getTime() {
+		return time;
+	}
+
+	public void setTime(LocalTime time) {
+		this.time = time;
+	}
+
 	public int getTicketCount() {
 		return ticketCount;
 	}
@@ -64,6 +69,14 @@ public class Schedule {
 	}
 	public void setTickets(Ticket[][] tickets) {
 		this.tickets = tickets;
+	}
+	public Schedule(int id, Play play, Studio studio, LocalDate date,int ticketCount) {
+		super();
+		this.id = id;
+		this.play = play;
+		this.studio = studio;
+		this.date = date;
+		this.ticketCount = ticketCount;
 	}
 	public void copyFrom(Schedule schedule){
 		this.id = schedule.id;
