@@ -19,4 +19,7 @@ public class DAOFactory {
     public static iScheduleDAO creatScheduleDAO(){
         return new ScheduleDAO();
     }
+    public static iTicketDAO createTicketDAO(){
+        return null;
+    }
 }
