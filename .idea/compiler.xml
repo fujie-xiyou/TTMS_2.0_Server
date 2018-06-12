@@ -9,8 +9,5 @@
         <module name="TTMS_WebServer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="TTMS_WebServer" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -107,4 +107,10 @@ public class SeatDAO implements iSeatDAO {
         }
         return null;
     }
+    public static void main(String []args){
+        List<Seat> seats=new LinkedList<>();
+        seats.add(new Seat(-1,18,2,3,SEAT_STATUS.BROKEN));
+
+        System.out.println(new SeatDAO().insert(seats));
+    }
 }

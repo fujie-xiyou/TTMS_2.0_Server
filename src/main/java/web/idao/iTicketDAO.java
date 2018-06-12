@@ -9,6 +9,6 @@ public interface iTicketDAO {
     public int insert(Ticket ticket);
     public int insert(List<Ticket> tickets);
     public int delete(Ticket ticket);
-    public int modify(Ticket ticket);
-    public int select(String condt);
+    public int update(Ticket ticket);
+    public List<Ticket> select(String condt);
 }

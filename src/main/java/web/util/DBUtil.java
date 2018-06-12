@@ -165,8 +165,7 @@ public class DBUtil {
             rst.close();
             stmt.close();
         } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            e.printStackTrace();       }
     }
 
 
