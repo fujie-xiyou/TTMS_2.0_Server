@@ -14,7 +14,7 @@ public class StudioDAO implements iStudioDAO {
     @Override
     public int insert(Studio stu) {
         try {
-            String sql = "insert into studio(studio_name, studio_row_count, studio_col_count, seat_count, studio_introduction )"
+            String sql = "insert into studio(studio_name, studio_row_count, studio_col_count, seat_count, studio_introduction,theEndPlayTime )"
                     + " values('"
                     + stu.getName()
                     + "', "
@@ -83,7 +83,7 @@ public class StudioDAO implements iStudioDAO {
         List<Studio> stuList = null;
         stuList=new LinkedList<Studio>();
         try {
-            String sql = "select studio_id, studio_name, studio_row_count, studio_col_count, seat_count ,studio_introduction from studio ";
+            String sql = "select studio_id, studio_name, studio_row_count, studio_col_count, seat_count ,studio_introduction ,theEndPlayTime from studio ";
             condt.trim();
             if(!condt.isEmpty())
                 sql+= " where " + condt;
@@ -102,6 +102,7 @@ public class StudioDAO implements iStudioDAO {
                     stu.setCol(rst.getInt("studio_col_count"));
                     stu.setCount(rst.getInt("seat_count"));
                     stu.setIntroduction(rst.getString("studio_introduction"));
+                    stu.setTheEndPlayTime(rst.getLong("theEndPlayTime"));
 //                    List<Seat> seats = DAOFactory.creatSeatDAO().select("studioID = "+stu.getId());
 //                    Seat[][] seats1 = new Seat[stu.getRow()][stu.getCol()];
 //                    for(Seat seat:seats){

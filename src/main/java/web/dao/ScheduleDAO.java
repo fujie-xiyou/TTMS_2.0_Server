@@ -95,6 +95,8 @@ public class ScheduleDAO implements iScheduleDAO {
                 schedule.setStudio(studio);
                 schedules.add(schedule);
             }
+            db.close(res);
+            db.close();
         }catch (Exception e){
             e.printStackTrace();
         }

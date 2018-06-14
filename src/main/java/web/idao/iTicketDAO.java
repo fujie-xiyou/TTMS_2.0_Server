@@ -10,5 +10,7 @@ public interface iTicketDAO {
     public int insert(List<Ticket> tickets);
     public int delete(Ticket ticket);
     public int update(Ticket ticket);
+    public int update(List<Ticket> tickets);
     public List<Ticket> select(String condt);
+    public Long timeStamp();
 }

@@ -12,10 +12,10 @@ import java.io.*;
 import java.util.Enumeration;
 
 
-@WebFilter(
-        filterName = "LoginFilter",
-        urlPatterns = {"/test"}
-)
+//@WebFilter(
+//        filterName = "LoginFilter",
+//        urlPatterns = {"/account/*","/order/*","/play/*","/schedule/*","/seat/*","/studio/*","/ticket/*"}
+//)
 public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -24,12 +24,7 @@ public class LoginFilter implements Filter {
         }catch (Exception e){
 
         }
-        System.out.println(servletRequest.getReader().readLine());
-        Enumeration<String> enumer = ((HttpServletRequest)servletRequest).getHeaderNames();
-        while(enumer.hasMoreElements()){
-            String key = enumer.nextElement();
-            System.out.println(key+" "+((HttpServletRequest)servletRequest).getHeader(key));
-        }
+
         if(((HttpServletRequest)servletRequest).getSession().getAttribute("user") != null) {
             filterChain.doFilter(servletRequest, servletResponse);
         }

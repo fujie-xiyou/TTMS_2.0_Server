@@ -53,4 +53,11 @@ public class SeatController {
             return new CustomResp(new Result("服务器异常")).toString();
         }
     }
+    @RequestMapping("fetchByID")
+    public String fetchByID(@RequestBody String data){
+        int id = json.fromJson(data,Integer.class);
+        List<Seat> seats = iSeatDAO.select("id = "+id);
+        if(seats.isEmpty()) return new CustomResp(new Result("座位id不存在")).toString();
+        return new CustomResp(new Result(),seats.get(0)).toString();
+    }
 }

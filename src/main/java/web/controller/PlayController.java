@@ -5,10 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import web.idao.DAOFactory;
 import web.model.CustomResp;
 import web.model.Play;
 import web.model.Result;
 import web.service.PlaySer;
+
+import java.util.List;
 
 @Controller
 @ResponseBody
@@ -49,5 +52,12 @@ public class PlayController {
     @RequestMapping("/fetchAll")
     public String fetchAll(){
         return new CustomResp(new Result(),playSer.fetchAll()).toString();
+    }
+    @RequestMapping("fetchByID")
+    public String fetchByID(@RequestBody String data){
+        int id = json.fromJson(data,Integer.class);
+        List<Play> plays = playSer.fetch("id = "+id);
+        if(plays.isEmpty()) return new CustomResp(new Result("剧目id不存在")).toString();
+         return new CustomResp(new Result(),plays.get(0)).toString();
     }
 }

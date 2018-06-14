@@ -10,6 +10,8 @@ import web.model.Result;
 import web.model.Studio;
 import web.service.StudioSer;
 
+import java.util.List;
+
 @Controller
 @ResponseBody
 @RequestMapping(value = "/studio" , produces = "text/html; charset=UTF-8")
@@ -54,5 +56,12 @@ public class StudioController {
         }else {
             return new CustomResp(new Result("服务器异常")).toString();
         }
+    }
+    @RequestMapping("fetchByID")
+    public String fetchByID(@RequestBody String data){
+        int id = json.fromJson(data,Integer.class);
+        List<Studio> studios = studioSer.fetch("id = "+id);
+        if(studios.isEmpty()) return new CustomResp(new Result("演出厅id不存在")).toString();
+        return new CustomResp(new Result(),studios.get(0)).toString();
     }
 }

@@ -20,6 +20,12 @@ public class DAOFactory {
         return new ScheduleDAO();
     }
     public static iTicketDAO createTicketDAO(){
-        return null;
+        return new TicketDAO();
+    }
+    public static iOrderDAO createOrderDAO(){
+        return new OrderDAO();
+    }
+    public static iOrderItemDAO createOrderItem(){
+        return new OrderItemDAO();
     }
 }

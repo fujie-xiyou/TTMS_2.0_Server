@@ -1,10 +1,11 @@
 package web.model.enums;
 
 public enum TICKET_STATUS{
+	NONE(0,"无座位"),
 	AVL(0,"待售"),
 	SOLD(1,"已售"),
 	RESV(2,"预留");
-	
+
 	private String name;
 	private int index;
 	private TICKET_STATUS(int index , String name) {

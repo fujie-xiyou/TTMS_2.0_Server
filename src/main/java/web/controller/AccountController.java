@@ -10,6 +10,8 @@ import web.model.CustomResp;
 import web.model.Result;
 import web.service.AccountSer;
 
+import java.util.List;
+
 @Controller
 @ResponseBody
 @RequestMapping(value = "/account",produces = "text/html; charset=UTF-8")
@@ -63,5 +65,12 @@ public class AccountController {
             return new CustomResp(new Result()).toString();
         }
         return  new CustomResp(new Result("服务器异常")).toString();
+    }
+    @RequestMapping("fetchByID")
+    public String fetchByID(@RequestBody String data){
+        int id = json.fromJson(data,Integer.class);
+        List<Account> accounts = accountSer.fetch("uid = "+id);
+        if(accounts.isEmpty()) return new CustomResp(new Result("账户id不存在")).toString();
+        return new CustomResp(new Result(),accounts.get(0)).toString();
     }
 }
