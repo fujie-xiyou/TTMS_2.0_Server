@@ -72,8 +72,8 @@ public class TicketSer {
         return iTicketDAO.timeStamp();
     }
     public Order purchaseTicket(List<Ticket> tickets,Account account) {
-
         if(iTicketDAO.update(tickets) > 0){
+            DAOFactory.creatScheduleDAO().updateTicketCount(tickets.get(0).getScheduleID(),-tickets.size());
             //生成订单
             List<OrderItem> items = new LinkedList<>();
             Order order = new Order();
@@ -85,6 +85,7 @@ public class TicketSer {
                 order.setTotal(order.getTotal()+ticket.getPrice());
             }
             if(new OrderSer().add(order) > 0){
+
                 for (Ticket ticket : tickets) {
                     OrderItem item = new OrderItem();
                     item.setOrderID(order.getId());
@@ -121,6 +122,7 @@ public class TicketSer {
 
         }
         if(iTicketDAO.update(tickets) <= 0) return null;
+        DAOFactory.creatScheduleDAO().updateTicketCount(tickets.get(0).getScheduleID(),tickets.size());
         if(orderSer.modify(res) <= 0) return null;
         if(new OrderItemSer().modify(items) <= 0 ) return null;
         res.setType(ORDER_TYPE.REFUND);

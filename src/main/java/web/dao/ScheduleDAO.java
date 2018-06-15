@@ -71,6 +71,20 @@ public class ScheduleDAO implements iScheduleDAO {
             return 0;
         }
     }
+    public int updateTicketCount(int id ,int addNum){
+        int rtn = 1;
+        String sql = "UPDATE schedule SET ticketCount = ticketCount + "+addNum +
+                " WHERE id = "+ id;
+        DBUtil db = new DBUtil();
+        db.openConnection();
+        try {
+            rtn = db.execCommand(sql);
+            db.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return rtn;
+    }
 
     @Override
     public List<Schedule> select(String condt) {
