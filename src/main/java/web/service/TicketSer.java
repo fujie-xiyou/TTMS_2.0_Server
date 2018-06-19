@@ -110,6 +110,7 @@ public class TicketSer {
             return null;
         }
         Order res = list.get(0);
+
         orderSer.getItems(order);
         List<OrderItem> items = order.getItems();
         res.setItems(items);
