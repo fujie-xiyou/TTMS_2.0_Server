@@ -21,6 +21,7 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try{
             servletResponse.setCharacterEncoding("UTF-8");
+            servletResponse.setContentType("text/json; charset=UTF-8");
         }catch (Exception e){
 
         }
