@@ -9,26 +9,25 @@ import java.util.Properties;
 
 public class Druid {
     private static DruidPooledConnection conn = null;
-    public static DruidPooledConnection getConn(){
-//        String path = Druid.class.getClass().getResource("/").getPath()
-//                +  "database/druid.properties";
-//        FileInputStream fis = null;
+    private static DruidDataSource ds = null;
+
+    public static DruidPooledConnection getConn() {
         try {
-//             fis = new FileInputStream(path);
-//            Properties p = new Properties();
-//            p.load(fis); // 加载properties文件
-            DruidDataSource ds = (DruidDataSource) DruidDataSourceFactory.createDataSource(loadPropertyFile("database/druid.properties"));  //创建数据源
-//            if(conn == null){
-//                conn = ds.getConnection();
-//            }
-            return  ds.getConnection();
-        }catch (IOException e){
+            if (ds == null) {
+                //创建数据源
+                ds = (DruidDataSource) DruidDataSourceFactory.createDataSource(loadPropertyFile("database/druid.properties"));
+            }
+            return ds.getConnection();
+        } catch (IOException e) {
             e.printStackTrace();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return conn;
+
+
+        return null;
     }
+
     public static Properties loadPropertyFile(String fullFile) {
         String webRootPath = null;
         if (null == fullFile || fullFile.equals(""))
@@ -41,7 +40,7 @@ public class Druid {
         Properties p = null;
         try {
             System.out.println(webRootPath
-                     + fullFile);
+                    + fullFile);
             inputStream = new FileInputStream(new File(webRootPath
                     + fullFile));
             p = new Properties();
