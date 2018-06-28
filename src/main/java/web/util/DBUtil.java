@@ -1,7 +1,5 @@
 package web.util;
-import web.model.Result;
 
-import java.io.*;
 import java.sql.*;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -15,7 +13,7 @@ public class DBUtil {
     private String password;    //定义密码
 
     private static ResourceBundle rb = ResourceBundle.getBundle("database/jdbc");
-    //从配置文件取数据库链接参数  
+    //从配置文件取数据库链接参数
     private void loadConnProperties() {
         Properties props = new Properties();
 
@@ -37,14 +35,16 @@ public class DBUtil {
         try {
             loadConnProperties();
             Class.forName(dbDriver);
-            this.conn = DriverManager.getConnection(dbURL, userName, password);
+//            this.conn = DriverManager.getConnection(dbURL, userName, password);
+            this.conn = Druid.getConn();
             return true;
         } catch (ClassNotFoundException classnotfoundexception) {
             classnotfoundexception.printStackTrace();
             System.err.println("db: " + classnotfoundexception.getMessage());
-        } catch (SQLException sqlexception) {
-            System.err.println("db.getconn(): " + sqlexception.getMessage());
         }
+//        catch (SQLException sqlexception) {
+//            System.err.println("db.getconn(): " + sqlexception.getMessage());
+//        }
         return false;
     }
     public PreparedStatement getPstmt(String sql){
