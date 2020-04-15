@@ -1,3 +1,13 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- 主机： localhost
+-- 生成日期： 2019-06-24 17:27:33
+-- 服务器版本： 5.6.43
+-- PHP 版本： 7.1.5
+
+
 --
 -- 数据库： `HLW_TTMS_2.0`
 --
